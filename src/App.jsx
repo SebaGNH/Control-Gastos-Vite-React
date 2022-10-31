@@ -1,13 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Header from './components/Header'
-import NuevoPresupuesto from './components/NuevoPresupuesto'
+
 
 
 const App = () => {
+  const [presupuesto, setPresupuesto] = useState(0)
+
   return (
     <>
-      <Header/>
-      <NuevoPresupuesto />
+      <Header
+        presupuesto={presupuesto}
+        setPresupuesto={setPresupuesto}
+      />
+      
     </>
   )
 }
