@@ -8,10 +8,16 @@ const App = () => {
   const [presupuesto, setPresupuesto] = useState(0)
   const [isValidPresupuesto, setIsValidPresupuesto] = useState(false)
   const [modal, setModal] = useState(false)
+  const [animarModal, setAnimarModal] = useState(false)
 
 
   const onClickNuevoGasto = () => {
     setModal(true)
+
+    setTimeout( () => {
+      setAnimarModal(true);
+      console.log('Animando Modal')
+    }, 500);
   }
 
   return (
@@ -32,7 +38,12 @@ const App = () => {
           </div>
       }
       {
-        modal && <Modal setModal={setModal}/>
+        modal && 
+        <Modal 
+          setModal={setModal}
+          animarModal={animarModal}
+          setAnimarModal={setAnimarModal}
+          />
       }
       
     </>

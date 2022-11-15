@@ -81,7 +81,7 @@ header h1 {
   text-align: center;
   display: block;
   text-transform: uppercase;
-  color: var(--gris40);
+  color: #fff;
   margin-bottom: 4rem;
   padding-bottom: 1rem;
   border-bottom: 2px solid var(--azul);
