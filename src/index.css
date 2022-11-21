@@ -370,7 +370,7 @@ main {
   opacity: 0;
 }
 .modal label {
-  color: var(--gris40);
+  color: #ccc
 }
 body .modal {
   overflow: hidden;
