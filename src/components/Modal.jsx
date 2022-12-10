@@ -1,9 +1,13 @@
-import React from 'react'
+import React,{ useState } from 'react'
 import BtnCerrar from '../img/cerrar.svg'
 
 const Modal = ({ setModal, animarModal, setAnimarModal }) => {
-  const onOcultarModal = () => {
-    
+
+  const [nombre, setNombre] = useState("");
+  const [cantidad, setCantidad] = useState("");
+  const [categoria, setCategoria] = useState("");
+
+  const onOcultarModal = () => {    
     setAnimarModal(false)
     setTimeout( () => { //Guardamos set para la transición
       setModal(false)
@@ -26,14 +30,18 @@ const Modal = ({ setModal, animarModal, setAnimarModal }) => {
           <input 
             type="text"
             id="nombre"
+            value={nombre}
+            onChange={e => setNombre(e.target.value)}
             placeholder="Añade el Nombre del Gasto"
           />
         </div>
         <div className="campo">
           <label htmlFor="cantidad">Cantidad</label>
           <input 
-            type="text"
+            type="number"
             id="cantidad"
+            value={cantidad}
+            onChange={ e => setCantidad(Number(e.target.value))}
             placeholder="Añade la cantidad del gasto: ej: 300"
           />
         </div>
@@ -41,6 +49,8 @@ const Modal = ({ setModal, animarModal, setAnimarModal }) => {
           <label htmlFor="categoria">Categoría</label>
           <select
             id="categoria"
+            value={categoria}
+            onChange={ e => setCategoria(e.target.value)}
           >
             <option value="">-- Seleccione una Categoría --</option>
             <option value="ahorro">Ahorro</option>
