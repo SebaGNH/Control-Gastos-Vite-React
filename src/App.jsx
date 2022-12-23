@@ -9,6 +9,7 @@ const App = () => {
   const [isValidPresupuesto, setIsValidPresupuesto] = useState(false)
   const [modal, setModal] = useState(false)
   const [animarModal, setAnimarModal] = useState(false)
+  const [gastos, setGastos] = useState([])
 
 
   const onClickNuevoGasto = () => {
@@ -18,6 +19,11 @@ const App = () => {
       setAnimarModal(true);
       console.log('Animando Modal')
     }, 500);
+  }
+
+
+  const guardarGasto = (gasto) => {
+    setGastos(gasto)
   }
 
   return (
@@ -43,6 +49,7 @@ const App = () => {
           setModal={setModal}
           animarModal={animarModal}
           setAnimarModal={setAnimarModal}
+          guardarGasto={guardarGasto}
           />
       }
       
