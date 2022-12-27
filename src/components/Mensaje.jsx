@@ -1,6 +1,5 @@
-import React from 'react'
 
-const Mensaje = ({children, tipo}) => {
+export const Mensaje = ({children, tipo}) => {
   return (
     <>
       <div className={`alerta ${tipo}`}>{children}</div>
@@ -8,4 +7,3 @@ const Mensaje = ({children, tipo}) => {
   )
 }
 
-export default Mensaje

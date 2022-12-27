@@ -1,9 +1,9 @@
-import React,{ useState } from 'react'
-import Mensaje from './Mensaje'
+import React, { useState } from 'react'
+import { Mensaje } from './'
 import BtnCerrar from '../img/cerrar.svg'
 import { generarID } from '../helpers'
 
-const Modal = ({ setModal, animarModal, setAnimarModal, guardarGasto }) => {
+export const Modal = ({ setModal, animarModal, setAnimarModal, guardarGasto }) => {
 
   const [mensaje, setMensaje] = useState("")
   const [nombre, setNombre] = useState("");
@@ -95,7 +95,6 @@ const Modal = ({ setModal, animarModal, setAnimarModal, guardarGasto }) => {
   )
 }
 
-export default Modal
 
 /*
 Al final ponemos '' para que también quite la clase animar

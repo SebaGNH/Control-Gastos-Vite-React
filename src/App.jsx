@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
-import Header from './components/Header'
 import IconoNuevoGasto from './img/nuevo-gasto.svg'
-import Modal from './components/Modal'
+import {Header, Modal, ListadoGastos } from './components/'
 
 
 const App = () => {
@@ -43,12 +42,17 @@ const App = () => {
       />
       {
         isValidPresupuesto &&
+        <>
+          <main>
+            <ListadoGastos/>
+          </main>
           <div className="nuevo-gasto">
             <img 
               src={IconoNuevoGasto} 
               alt="Icono Nuevo Gasto"
               onClick={onClickNuevoGasto} />
           </div>
+        </>
       }
       {
         modal && 

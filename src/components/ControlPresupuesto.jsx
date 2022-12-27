@@ -1,6 +1,4 @@
-import React from 'react'
-
-const ControlPresupuesto = ({presupuesto}) => {
+export const ControlPresupuesto = ({presupuesto}) => {
 
   //Convertimos formato a moneda dolar
   //const monedaPresupuesto = presupuesto.toLocaleString('en-US',{style:'currency', currency: 'USD'});
@@ -28,5 +26,5 @@ const ControlPresupuesto = ({presupuesto}) => {
   )
 }
 
-export default ControlPresupuesto
+
 

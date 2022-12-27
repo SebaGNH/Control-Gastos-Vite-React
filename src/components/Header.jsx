@@ -1,9 +1,7 @@
-import React from 'react'
-import NuevoPresupuesto from './NuevoPresupuesto'
-import ControlPresupuesto from './ControlPresupuesto'
+import { NuevoPresupuesto, ControlPresupuesto } from './'
 
 
-const Header = ({presupuesto, setPresupuesto,isValidPresupuesto, setIsValidPresupuesto}) => {
+export const Header = ({presupuesto, setPresupuesto,isValidPresupuesto, setIsValidPresupuesto}) => {
   return (
     <header>
       <h1>Planificador de gastos</h1>
@@ -24,4 +22,3 @@ const Header = ({presupuesto, setPresupuesto,isValidPresupuesto, setIsValidPresu
   )
 }
 
-export default Header

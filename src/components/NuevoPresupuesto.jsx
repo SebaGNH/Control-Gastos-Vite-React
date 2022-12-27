@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
-import Mensaje from './Mensaje'
+import { Mensaje } from './'
 
-const NuevoPresupuesto = ({presupuesto, setPresupuesto,setIsValidPresupuesto}) => {
+export const NuevoPresupuesto = ({presupuesto, setPresupuesto,setIsValidPresupuesto}) => {
 
   const [mensaje, setMensaje] = useState("")
 
@@ -42,4 +42,3 @@ const NuevoPresupuesto = ({presupuesto, setPresupuesto,setIsValidPresupuesto}) =
   )
 }
 
-export default NuevoPresupuesto
