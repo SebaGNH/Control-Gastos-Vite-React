@@ -1,6 +1,7 @@
 import React,{ useState } from 'react'
 import Mensaje from './Mensaje'
 import BtnCerrar from '../img/cerrar.svg'
+import { generarID } from '../helpers'
 
 const Modal = ({ setModal, animarModal, setAnimarModal, guardarGasto }) => {
 
@@ -24,8 +25,9 @@ const Modal = ({ setModal, animarModal, setAnimarModal, guardarGasto }) => {
         setMensaje("");
       }, 3000);
       return;
-    }  
-    guardarGasto({nombre, cantidad, categoria }) 
+    } 
+    const id =  generarID();
+    guardarGasto({id, nombre, cantidad, categoria }) 
   }
 
 

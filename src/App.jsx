@@ -17,13 +17,20 @@ const App = () => {
 
     setTimeout( () => {
       setAnimarModal(true);
-      console.log('Animando Modal')
+      //console.log('Animando Modal')
     }, 500);
   }
 
 
   const guardarGasto = (gasto) => {
-    setGastos(gasto)
+    setGastos([...gastos, gasto])
+
+    //cerramos ventana modal
+    setAnimarModal(false);
+    setTimeout( () => {
+      setModal(false)
+    }, 500);
+
   }
 
   return (
