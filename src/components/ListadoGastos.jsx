@@ -1,7 +1,20 @@
 import React from 'react'
+import { Gasto } from './'
 
-export const ListadoGastos = () => {
+export const ListadoGastos = ({gastos}) => {
   return (
-    <div>ListadoGastos</div>
+    <div className="listado-gastos contenedor">
+      <h2>{gastos.length? "Listado de gastos": "Sin gastos"}</h2>
+      {
+        gastos.map( gasto => (
+          <Gasto 
+            key={gasto.id}
+            gasto={gasto}
+            />          
+        ))
+      }
+
+
+    </div>
   )
 }
