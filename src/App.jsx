@@ -22,6 +22,7 @@ const App = () => {
 
 
   const guardarGasto = (gasto) => {
+    gasto.fecha = Date.now();
     setGastos([...gastos, gasto])
 
     //cerramos ventana modal
