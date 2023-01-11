@@ -37,7 +37,7 @@ const App = () => {
   }
 
   return (
-    <>
+    <div className={modal && 'fijar'}>
       <Header
         presupuesto={presupuesto}
         setPresupuesto={setPresupuesto}
@@ -70,7 +70,7 @@ const App = () => {
           />
       }
       
-    </>
+    </div>
   )
 }
 
