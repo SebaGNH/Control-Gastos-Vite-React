@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import IconoNuevoGasto from './img/nuevo-gasto.svg'
 import {Header, Modal, ListadoGastos } from './components/'
-
+import { getFecha } from './helpers'
 
 const App = () => {
   const [presupuesto, setPresupuesto] = useState(0)
@@ -22,7 +22,10 @@ const App = () => {
 
 
   const guardarGasto = (gasto) => {
-    gasto.fecha = Date.now();
+    //gasto.fecha = Date.now();
+    //const fechaNueva = new Date();
+    const fechaNueva = Date.now();
+    gasto.fecha = getFecha(fechaNueva);
     setGastos([...gastos, gasto])
 
     //cerramos ventana modal
