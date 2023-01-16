@@ -10,8 +10,13 @@ export const ControlPresupuesto = ({presupuesto, gastos}) => {
   }
 
   useEffect(() => {
-    console.log('Componente listo')
+    //itera los gastos "cantidad" y nos da el total gastado, 0 es el valor inicial
+    const totalGastado = gastos.reduce( (total, gasto) => gasto.cantidad + total, 0 )
+    setGastado(totalGastado);
+    setDisponible( presupuesto - totalGastado )
   }, [gastos])
+
+
 
 
   
@@ -22,13 +27,13 @@ export const ControlPresupuesto = ({presupuesto, gastos}) => {
       </div>
       <div className="contenido-presupuesto">
         <p>
-          <span>presupuesto:</span> {formatearCantidad(presupuesto)}
+          <span>Presupuesto:</span> { formatearCantidad(presupuesto) }
         </p>
         <p>
-          <span>Disponible:</span> {formatearCantidad(disponible)}
+          <span>Disponible:</span> { formatearCantidad(disponible) }
         </p>
         <p>
-          <span>Gastada:</span> {formatearCantidad(gastado)}
+          <span>Gastada:</span> { formatearCantidad(gastado) }
         </p>
       </div>
     </div>
