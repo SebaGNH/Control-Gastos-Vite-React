@@ -1,3 +1,12 @@
+import {
+  LeadingActions,
+  SwipeableList,
+  SwipeableListItem,
+  SwipeAction,
+  TrailingActions,
+} from 'react-swipeable-list';
+import 'react-swipeable-list/dist/styles.css'; //Los efectos o animaciones
+
 import React from 'react'
 import icono_ahorro from '../img/icono_ahorro.svg'
 import icono_casa from '../img/icono_casa.svg'
@@ -19,19 +28,47 @@ const diccionarioIconos = {
   suscripciones: icono_suscripciones
   }
 
+
+  const leadingActions = () => (
+    <LeadingActions>
+      <SwipeAction onClick={() => console.info('swipe action triggered')}>
+        Action name
+      </SwipeAction>
+    </LeadingActions>
+  );
+  
+  const trailingActions = () => (
+    <TrailingActions>
+      <SwipeAction
+        destructive={true}
+        onClick={() => console.info('swipe action triggered')}
+      >
+        Delete
+      </SwipeAction>
+    </TrailingActions>
+  );
+
   return (
-    <div className='gasto sombra'>
-      <div className="contenido-gasto">
-        <div className="contenido-icono">
-          <img src={diccionarioIconos[gasto.categoria]} alt="Icono Gasto" />
+    <SwipeableList>
+      <SwipeAction
+        leadingActions={leadingActions()}
+        trailingActions={trailingActions()}
+      >
+        <div className='gasto sombra'>
+          <div className="contenido-gasto">
+            <div className="contenido-icono">
+              <img src={diccionarioIconos[gasto.categoria]} alt="Icono Gasto" />
+            </div>
+            <div className="descripcion-gasto">
+              <p className='categoria'> {gasto.categoria} </p>
+              <p className='nombre-gasto'> {gasto.nombre} </p>
+              <p className='fecha-gasto'>Agregado el:{' '}<span>{gasto.fecha}</span></p>
+            </div>
+            <p className='cantidad-gasto'> ${gasto.cantidad} </p>
+          </div>
         </div>
-        <div className="descripcion-gasto">
-          <p className='categoria'> {gasto.categoria} </p>
-          <p className='nombre-gasto'> {gasto.nombre} </p>
-          <p className='fecha-gasto'>Agregado el:{' '}<span>{gasto.fecha}</span></p>
-        </div>
-        <p className='cantidad-gasto'> ${gasto.cantidad} </p>
-      </div>
-    </div>
+      </SwipeAction>
+    </SwipeableList>
+    
   )
 }
