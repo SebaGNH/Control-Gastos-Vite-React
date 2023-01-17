@@ -28,29 +28,30 @@ const diccionarioIconos = {
   suscripciones: icono_suscripciones
   }
 
-
+  //Evento del lado izquierdo
   const leadingActions = () => (
     <LeadingActions>
-      <SwipeAction onClick={() => console.info('swipe action triggered')}>
-        Action name
+      <SwipeAction onClick={() => console.info('Swipe Editar')}>
+        Editar
       </SwipeAction>
     </LeadingActions>
   );
   
+  //Evento del lado derecho // Eliminar automáticamente
   const trailingActions = () => (
     <TrailingActions>
       <SwipeAction
         destructive={true}
-        onClick={() => console.info('swipe action triggered')}
+        onClick={() => console.info('Swipe Eliminar')}
       >
-        Delete
+        Eliminar
       </SwipeAction>
     </TrailingActions>
   );
 
   return (
     <SwipeableList>
-      <SwipeAction
+      <SwipeableListItem
         leadingActions={leadingActions()}
         trailingActions={trailingActions()}
       >
@@ -67,7 +68,7 @@ const diccionarioIconos = {
             <p className='cantidad-gasto'> ${gasto.cantidad} </p>
           </div>
         </div>
-      </SwipeAction>
+      </SwipeableListItem>
     </SwipeableList>
     
   )

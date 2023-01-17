@@ -267,7 +267,8 @@ main {
   margin-top: 5rem;
 }
 .listado-gastos h2 {
-  color: var(--gris-oscuro);
+  /* color: var(--gris-oscuro); */
+  color: #fff;
   font-weight: 900;
 }
 .no-gastos {
@@ -286,7 +287,8 @@ main {
 
 .cantidad-gasto {
   font-size: 2.4rem;
-  color: var(--negro);
+  /* color: var(--negro); */
+  color: #fff;
   font-weight: 900;
 }
 
@@ -370,7 +372,7 @@ main {
   opacity: 0;
 }
 .modal label {
-  color: #ccc
+  color: #fff
 }
 body .modal {
   overflow: hidden;
@@ -396,14 +398,16 @@ body .modal {
 /*** SWIPE LIST OVERRIDES **/
 .swipe-action__leading {
   background-color: var(--azul);
-  color: var(--gris40);
+  /* color: var(--gris40); */
+  color: #fff;
   margin-bottom: 2rem;
 }
 
 .swipe-action__trailing {
   background-color: #db2777;
   margin-bottom: 2rem;
-  color: var(--gris40);
+ /*  color: var(--gris40); */
+  color: #fff;
 }
 
 .swipeable-list .swipe-action {
